@@ -1,13 +1,13 @@
 {% set name = "django-sesame" %}
-{% set version = "3.2.3" %}
+{% set version = "3.2.5" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/django_sesame-{{ version }}.tar.gz
-  sha256: 09977a1c55bdbcce0a024c712c4d683e1a69543a217626ffa1d5f7ef7ebffc58
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/django_sesame-{{ version }}.tar.gz
+  sha256: eeb662069ea74d635ab11e0f93446c8a7c187f41b0788ddc3c6c72c6f8db2eb1
 
 build:
   noarch: python
@@ -21,7 +21,8 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - django >=3.2
+    - django >=5.2
+    # - ua-parser >=0.15
   run_constrained:
     - ua-parser >=0.15
 
